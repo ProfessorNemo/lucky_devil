@@ -108,6 +108,7 @@ GEM
     ffi (1.15.5)
     font-awesome-rails (4.7.0.8)
       railties (>= 3.2, < 8.0)
+    foreman (0.87.2)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -198,12 +199,16 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.3)
       loofah (~> 2.3)
+    rails-i18n (6.0.0)
+      i18n (>= 0.7, < 2)
+      railties (>= 6.0.0, < 7)
     rails_admin (3.0.0)
       activemodel-serializers-xml (>= 1.0)
       kaminari (>= 0.14, < 2.0)
       nested_form (~> 0.3)
       rails (>= 6.0, < 8)
       turbo-rails (~> 1.0)
+    rails_admin-i18n (1.18.0)
     railties (6.1.7)
       actionpack (= 6.1.7)
       activesupport (= 6.1.7)
@@ -330,6 +335,7 @@ DEPENDENCIES
   devise-i18n
   factory_bot_rails
   font-awesome-rails
+  foreman (~> 0.87.2)
   jbuilder (~> 2.7)
   jquery-rails
   launchy
@@ -339,7 +345,9 @@ DEPENDENCIES
   rack-mini-profiler (~> 3.0)
   rails (~> 6.1.6, >= 6.1.6.1)
   rails-controller-testing
+  rails-i18n (~> 6.0.0)
   rails_admin
+  rails_admin-i18n
   rspec-rails (>= 5.1.2)
   rubocop (~> 1.30)
   rubocop-performance (~> 1.14)

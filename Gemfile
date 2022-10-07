@@ -22,11 +22,14 @@ gem 'webpacker', '~> 5.0'
 
 # Удобная админка для управления любыми сущностями
 gem 'rails_admin'
+gem 'rails_admin-i18n'
+gem 'rails-i18n', '~> 6.0.0'
 
 gem 'devise', '~> 4.8'
 gem 'devise-i18n'
 
 gem 'font-awesome-rails'
+gem 'foreman', '~> 0.87.2'
 gem 'jquery-rails'
 gem 'russian'
 gem 'twitter-bootstrap-rails'
