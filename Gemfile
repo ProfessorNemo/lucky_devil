@@ -31,6 +31,7 @@ gem 'devise-i18n'
 gem 'font-awesome-rails'
 gem 'foreman', '~> 0.87.2'
 gem 'jquery-rails'
+gem 'letter_opener'
 gem 'russian'
 gem 'twitter-bootstrap-rails'
 
@@ -60,7 +61,7 @@ group :development do
   gem 'web-console', '>= 4.1.0'
 end
 
-# Gemfile (очистить базу данных)
+# очистить базу данных
 # https://github.com/DatabaseCleaner/database_cleaner
 group :test do
   gem 'database_cleaner-active_record'
