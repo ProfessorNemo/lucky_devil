@@ -358,6 +358,7 @@ DEPENDENCIES
   rubocop-rspec
   russian
   sass-rails (>= 6)
+  sassc-rails
   shoulda-matchers
   spring
   turbolinks (~> 5)

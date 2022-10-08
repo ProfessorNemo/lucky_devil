@@ -14,8 +14,6 @@ class GameQuestion < ApplicationRecord
   # автоматически берутся из связанной модели question
   delegate :text, :level, to: :question, allow_nil: true
 
-  # без игры и вопроса - игровой вопрос не имеет смысла
-
   # в полях a,b,c,d прячутся индексы ответов из объекта :game
   validates :a, :b, :c, :d, inclusion: { in: 1..4 }
 

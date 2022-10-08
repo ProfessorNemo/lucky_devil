@@ -3,6 +3,7 @@
 # Основной игровой контроллер
 # Создает новую игру, обновляет статус игры по ответам юзера, выдает подсказки
 #
+# rubocop:disable all
 class GamesController < ApplicationController
   before_action :authenticate_user!
 
@@ -26,10 +27,15 @@ class GamesController < ApplicationController
     @game = Game.create_game_for_user!(current_user)
 
     # отправляемся на страницу игры
-    redirect_to game_path(@game), notice: t('controllers.games.game_created', created_at: @game.created_at)
+    message_started = { notice: t('controllers.games.game_created', created_at: @game.created_at) }
+
+    redirect_to game_path(@game), message_started
   rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotSaved => e # если ошибка создания игры
-    Rails.logger.error(t('controllers.games.error_creating_game', user: current_user.id, msg: e,
-                                                                  backtrace: e.backtrace))
+    message_error = t('controllers.games.error_creating_game', user: current_user.id, msg: e,
+                                                               backtrace: e.backtrace)
+
+    Rails.logger.error(message_error)
+
     # отправляемся назад с алертом
     redirect_to :back, alert: t('controllers.games.game_not_created')
   end
@@ -110,3 +116,4 @@ class GamesController < ApplicationController
     redirect_to root_path, alert: t('controllers.games.not_your_game') if @game.blank?
   end
 end
+# rubocop:enable all
