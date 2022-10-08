@@ -16,6 +16,7 @@
  *= require font-awesome
  *= require games
  *= require users
+ *= require badge
  *= require_self
  */
 
@@ -29,7 +30,7 @@ html {
     background-position: center center;
     background-position: center center;
     background-attachment: fixed;
-    color: white;
+    color: white
 }
 
 h2,
@@ -84,4 +85,14 @@ h3 {
 .list-group-prizes .active {
     font-weight: bold;
     color: #ffff00;
+}
+
+.bg-success {
+    /* background-color: #f0d8d8; */
+    background: none;
+}
+
+.bg-danger {
+    /* background-color: #f0d8d8; */
+    background: none;
 }

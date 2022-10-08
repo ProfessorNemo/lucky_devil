@@ -26,11 +26,12 @@ class GamesController < ApplicationController
     @game = Game.create_game_for_user!(current_user)
 
     # отправляемся на страницу игры
-    redirect_to game_path(@game), notice: I18n.t('controllers.games.game_created', created_at: @game.created_at)
+    redirect_to game_path(@game), notice: t('controllers.games.game_created', created_at: @game.created_at)
   rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotSaved => e # если ошибка создания игры
-    Rails.logger.error("Error creating game for user #{current_user.id}, msg = #{e}. #{e.backtrace}")
+    Rails.logger.error(t('controllers.games.error_creating_game', user: current_user.id, msg: e,
+                                                                  backtrace: e.backtrace))
     # отправляемся назад с алертом
-    redirect_to :back, alert: I18n.t('controllers.games.game_not_created')
+    redirect_to :back, alert: t('controllers.games.game_not_created')
   end
 
   # params[:letter] - единственный параметр
@@ -40,7 +41,7 @@ class GamesController < ApplicationController
     @game_question = @game.current_game_question
 
     unless @answer_is_correct
-      flash[:alert] = I18n.t(
+      flash[:alert] = t(
         'controllers.games.bad_answer',
         answer: @game_question.correct_answer,
         prize: view_context.number_to_currency(@game.prize)
@@ -68,8 +69,8 @@ class GamesController < ApplicationController
   def take_money
     @game.take_money!
     redirect_to user_path(current_user),
-                flash: { warning: I18n.t('controllers.games.game_finished',
-                                         prize: view_context.number_to_currency(@game.prize)) }
+                flash: { warning: t('controllers.games.game_finished',
+                                    prize: view_context.number_to_currency(@game.prize)) }
   end
 
   # запрашиваем помощь в текущем вопросе
@@ -77,9 +78,9 @@ class GamesController < ApplicationController
   def help
     # используем помощь в игре и по результату задаем сообщение юзеру
     msg = if @game.use_help(params[:help_type].to_sym)
-            { flash: { info: I18n.t('controllers.games.help_used') } }
+            { flash: { info: t('controllers.games.help_used') } }
           else
-            { alert: I18n.t('controllers.games.help_not_used') }
+            { alert: t('controllers.games.help_not_used') }
           end
 
     redirect_to game_path(@game), msg
@@ -91,7 +92,7 @@ class GamesController < ApplicationController
     return unless @game.finished?
 
     redirect_to user_path(current_user),
-                alert: I18n.t('controllers.games.game_closed', game_id: @game.id)
+                alert: t('controllers.games.game_closed', game_id: @game.id)
   end
 
   def goto_game_in_progress!
@@ -100,12 +101,12 @@ class GamesController < ApplicationController
     return if game_in_progress.blank?
 
     redirect_to game_path(game_in_progress),
-                alert: I18n.t('controllers.games.game_not_finished')
+                alert: t('controllers.games.game_not_finished')
   end
 
   def set_game
     @game = current_user.games.find_by(id: params[:id])
     # если у current_user нет игры - посылаем
-    redirect_to root_path, alert: I18n.t('controllers.games.not_your_game') if @game.blank?
+    redirect_to root_path, alert: t('controllers.games.not_your_game') if @game.blank?
   end
 end

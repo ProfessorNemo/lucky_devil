@@ -29,8 +29,13 @@ class QuestionsController < ApplicationController
       file_lines = File.readlines(q_file.path)
     else
       # если файл нельзя прочитать, отправляем на экшен new c инфой об ошибках
-      redirect_to new_questions_path, alert: "Bad file_data: #{q_file.class.name}, #{q_file.inspect}"
-      return false
+      redirect_to new_questions_path, alert: t(
+        'controllers.questions.bad_file_data',
+        class: q_file.class.name,
+        info: q_file.inspect
+      )
+
+      false
     end
 
     start_time = Time.zone.now
@@ -38,10 +43,12 @@ class QuestionsController < ApplicationController
     failed_count = create_questions_from_lines(file_lines, level)
 
     # отправляем на страницу new и выводим статистику о проделаных операциях
-    redirect_to new_questions_path,
-                notice: "Уровень #{level}, обработано #{file_lines.size}, " \
-                        "создано #{file_lines.size - failed_count}, " \
-                        "время #{Time.at((Time.zone.now - start_time).to_i).utc.strftime '%S.%L сек'}"
+    redirect_to new_questions_path, notice: t(
+      'controllers.questions.create_info',
+      level: level, size: file_lines.size,
+      created: file_lines.size - failed_count,
+      time: Time.at((Time.zone.now - start_time).to_i).utc.strftime('%S.%L сек').to_s
+    )
   end
 
   private

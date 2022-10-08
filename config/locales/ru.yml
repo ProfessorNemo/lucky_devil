@@ -1,4 +1,51 @@
 ru:
+  controllers:
+    games:
+      bad_answer: "Правильный ответ: %{answer}. Игра закончена, ваш приз %{prize}"
+      error_creating_game: 'Error creating game for user %{user}, msg = %{msg}. %{backtrace}'
+      game_created: "Игра началась в %{created_at}, время пошло"
+      game_not_created: "Не удалось создать игру :( Свяжитесь с админом"
+      game_not_finished: "Вы еще не завершили игру"
+      game_finished: "Игра окончена, ваш выигрыш %{prize}. Заходите еще!"
+      game_closed: "Игра %{game_id} закончена и больше недоступна, начните новую!"
+      good_answer: "Правильный ответ, молодцом :)"
+      help_used: "Вы использовали подсказку"
+      help_not_used: "Подсказка уже была использована!"
+      not_your_game: "Это не ваша игра!"
+    questions:
+      bad_file_data: 'Bad file_data: %{class}, %{info}'
+      create_info: 'Уровень %{level}, обработано %{size}, создано %{created}, время %{time}'
+
+  devise:
+    registrations:
+      edit:
+        back: Назад
+        cancel_my_account: 'Удалить учетную запись:'
+        confirm_new_password: Подтвердите новый пароль
+        delete: Удалить
+        edit: Редактирование
+        name: Имя
+        new_password: Новый пароль
+        password_length: 'не менее %{count} символов'
+      new:
+        name: Имя
+        password_length: 'не менее %{count} символов'
+        password: Пароль
+        password_confirm: Подтвердите пароль
+        your_name: Ваше имя
+    sessions:
+      new:
+        email: Email
+        password: Пароль
+    passwords:
+      edit:
+        enter_new_password: Введите новый пароль
+        password_length: 'не менее %{count} символов'
+
+  games:
+    help:
+      spectators_guess: 'Зрители считают:'
+
   game_help:
     friends:
       - "Жора"
@@ -10,31 +57,51 @@ ru:
       - "Сережа"
     friend_call: "%{name} считает, что это вариант %{variant}"
 
-  controllers:
-    games:
-      not_your_game: "Это не ваша игра!"
-      game_created: "Игра началась в %{created_at}, время пошло"
-      game_not_created: "Не удалось создать игру :( Свяжитесь с админом"
-      help_used: "Вы использовали подсказку"
-      help_not_used: "Подсказка уже была использована!"
-      game_not_finished: "Вы еще не завершили игру"
-      game_finished: "Игра окончена, ваш выигрыш %{prize}. Заходите еще!"
-      game_closed: "Игра %{game_id} закончена и больше недоступна, начните новую!"
-      good_answer: "Правильный ответ, молодцом :)"
-      bad_answer: "Правильный ответ: %{answer}. Игра закончена, ваш приз %{prize}"
-
-# статусы игры
   game_statuses:
     fail: 'проигрыш'
-    timeout: 'время'
-    money: 'деньги'
-    won: 'победа'
     in_progress: 'в процессе'
+    money: 'деньги'
+    timeout: 'время'
+    won: 'победа'
+
+  layouts:
+    application:
+      admin: Админка
+      add_new_questions: Залить новые вопросы
+      goodprogrammer: Хороший программист 2022
+      link: 'https://github.com/ProfessorNemo'
+      log_in: Войти
+      log_out: Выйти
+      new_game: Новая игра
+      sign_up: Зарегистрироваться
+      title: Millionaire
 
   number:
     currency:
       format:
-        # Формат отображения валюты и обозначение самой валюты
-        unit: "₽"
         precision: 0
+        unit: "₽"
 
+  questions:
+    new:
+      info_1: 'Каждая непустая строка файла должна выглядеть так:'
+      info_2: Текст вопроса?|Правильный ответ|Ответ 2|Ответ 3|Ответ 4
+      enter_question_level: Укажите уровень пачки вопросов и приложите файл нужного формата
+      file_with_questions: Файл с вопросами
+      load: Залить
+      level: 'Уровень — %{count}'
+
+  users:
+    index:
+      for_game: За игру
+      games: Игр
+      name: Имя
+      place: Место
+      prize: Выигрыш
+      rating: Рейтинг
+    show:
+      change_name_password: Сменить имя и пароль
+      date: Дата
+      hints: Подсказки
+      prize: Выигрыш
+      question: Вопрос
