@@ -11,8 +11,8 @@ FactoryBot.define do
     # Если при создании game_question не указать явно объекты Игра и Вопрос,
     # наша фабрика сама создаст и пропишет нужные объекты, используя фабрики
     # с именами :game и :question
-    association :game
-    association :question
+    association :game, factory: :game
+    association :question, factory: :question
   end
 end
 

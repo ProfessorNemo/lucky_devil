@@ -52,5 +52,11 @@ RSpec/ExpectActual:
 RSpec/ContextWording:
   Enabled: false
 
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
 Rails/HttpPositionalArguments:
   Enabled: false
