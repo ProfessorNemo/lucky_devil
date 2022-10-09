@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Модельи игры — создается когда пользователь начинает новую игру
+# Модель игры — создается когда пользователь начинает новую игру
 # Хранит/обновляет состояние игры и отвечает за игровой процесс.
 class Game < ApplicationRecord
   # денежный приз за каждый вопрос
@@ -123,12 +123,13 @@ class Game < ApplicationRecord
   # Возвращает true, если подсказка применилась успешно,
   # false если подсказка уже заюзана.
   #
+  # rubocop:disable all
   # help_type = :fifty_fifty | :audience_help | :friend_call
   def use_help(help_type)
     case help_type
     when :fifty_fifty
       unless fifty_fifty_used
-        # ActiveRecord метод toggle! переключает булевое поле сразу в базе
+        # ActiveRecord метод "toggle!"" переключает булевое поле сразу в базе
         toggle!(:fifty_fifty_used)
         current_game_question.add_fifty_fifty
         return true
@@ -188,6 +189,7 @@ class Game < ApplicationRecord
       user.save!
     end
   end
+  # rubocop:enable all
 
   # По заданному уровню вопроса вычисляем вознаграждение за ближайшую несгораемую сумму
   # noinspection RubyArgCount

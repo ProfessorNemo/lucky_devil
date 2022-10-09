@@ -46,6 +46,10 @@ webpacker:
 run-console:
 	bundle exec rails console
 
+rspec:
+	bundle exec rspec spec/models/game_spec.rb
+	bundle exec rspec spec/controllers/games_controller_spec.rb
+
 c: run-console
 
 .PHONY:	db

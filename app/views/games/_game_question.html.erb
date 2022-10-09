@@ -11,7 +11,7 @@
       <div class="col-md-6 buffer-top">
         <%= link_to content_tag(:span, letter.upcase, class: 'variant') + ": #{variant}",
                     answer_game_path(game, letter: letter),
-                    method: :put,
+                    data: {method: :put, confirm: 'Вы уверены?'},
                     remote: true,
                     class: 'btn btn-default btn-variant',
                     style: 'width: 100%'
@@ -20,3 +20,4 @@
     <% end %>
   <% end %>
 </div>
+

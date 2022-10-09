@@ -87,12 +87,17 @@ h3 {
     color: #ffff00;
 }
 
+.bg-danger,
 .bg-success {
     /* background-color: #f0d8d8; */
     background: none;
 }
 
-.bg-danger {
-    /* background-color: #f0d8d8; */
-    background: none;
+input {
+    color: rgb(240, 8, 8);
+    font: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    margin: 0;
 }
