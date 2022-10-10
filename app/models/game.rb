@@ -128,6 +128,8 @@ class Game < ApplicationRecord
   def use_help(help_type)
     case help_type
     when :fifty_fifty
+      # если этот фложок в БД 'false', то переключаем его с пом-ю м-да toggle! в 'true'
+      # ('!') - сразу сохраняем в базе
       unless fifty_fifty_used
         # ActiveRecord метод "toggle!"" переключает булевое поле сразу в базе
         toggle!(:fifty_fifty_used)

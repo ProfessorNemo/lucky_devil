@@ -115,14 +115,5 @@ class GamesController < ApplicationController
     # если у current_user нет игры - посылаем
     redirect_to root_path, alert: t('controllers.games.not_your_game') if @game.blank?
   end
-
-  def main_unit_clock_set
-    loop do
-        puts "count...."
-
-        @cooltech_time=@cooltech_time+1
-        sleep 1
-    end 
-end
 end
 # rubocop:enable all

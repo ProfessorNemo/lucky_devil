@@ -42,6 +42,13 @@ RSpec.describe GameQuestion, type: :model do
     end
   end
 
+  # help_hash у нас имеет такой формат:
+  # {
+  #   fifty_fifty: ['a', 'b'], # При использовании подсказски остались варианты a и b
+  #   audience_help: {'a' => 42, 'c' => 37 ...}, # Распределение голосов по вариантам a, b, c, d
+  #   friend_call: 'Василий Петрович считает, что правильный ответ A'
+  # }
+
   context 'user helpers' do
     it 'correct audience_help' do
       expect(game_question.help_hash).not_to include(:audience_help)
@@ -92,10 +99,3 @@ RSpec.describe GameQuestion, type: :model do
     end
   end
 end
-
-# help_hash у нас имеет такой формат:
-# {
-#   fifty_fifty: ['a', 'b'], # При использовании подсказски остались варианты a и b
-#   audience_help: {'a' => 42, 'c' => 37 ...}, # Распределение голосов по вариантам a, b, c, d
-#   friend_call: 'Василий Петрович считает, что правильный ответ A'
-# }
