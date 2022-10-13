@@ -37,7 +37,7 @@ class GamesController < ApplicationController
     Rails.logger.error(message_error)
 
     # отправляемся назад с алертом
-    redirect_to :back, alert: t('controllers.games.game_not_created')
+    redirect_to root_path, alert: t('controllers.games.game_not_created')
   end
 
   # params[:letter] - единственный параметр

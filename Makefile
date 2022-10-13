@@ -55,6 +55,8 @@ rspec:
 	bundle exec rspec spec/views/users/_game.html.erb_spec.rb
 	bundle exec rspec spec/views/games/_help.html.erb_spec.rb
 	bundle exec rspec spec/views/games/_game_question.html.erb_spec.rb
+	bundle exec rspec spec/features/user_creates_game_spec.rb
+	bundle exec rspec spec/features/user_looks_another_user_page_spec.rb
 
 c: run-console
 

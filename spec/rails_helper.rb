@@ -39,11 +39,11 @@ RSpec.configure do |config|
   # https://github.com/plataformatec/devise/issues/4133
 
   # В тестах на контроллеры и представления подключаем специальные
-  # хелперы для авторизации с помощью девайс
+  # хелперы для авторизации с помощью девайс (дает такой метод, как "login_as")
   config.include Devise::TestHelpers, type: :controller
   config.include Devise::TestHelpers, type: :view
 
-  # Подключаем в фичах специальные хелперы для авторизации
+  # Подключаем в фичах специальные хелперы для авторизации пользователя в features:
   config.include Warden::Test::Helpers, type: :feature
 end
 

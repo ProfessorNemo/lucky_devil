@@ -7,7 +7,7 @@ module GamesHelper
     status_styles =
       case game.status
       when :in_progress then 'label-warning'
-      when :timeout     then 'label-secondary'
+      when :timeout     then 'label-primary'
       when :fail        then 'label-danger'
       else                   'label-success'
       end

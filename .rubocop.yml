@@ -58,6 +58,9 @@ RSpec/ContextWording:
 RSpec/NestedGroups:
   Enabled: false
 
+RSpec/LetSetup:
+  Enabled: false
+
 RSpec/MultipleMemoizedHelpers:
   Enabled: false
 
