@@ -7,17 +7,22 @@
     <%= f.hidden_field :reset_password_token %>
 
     <div class="field form-group mb-2">
-      <%= f.label t('.new_password'), class: 'form-label' %>
+      <%= f.label t('.new_password'), class: 'form-label' %><br />
       <% if @minimum_password_length %>
-        <em>(<%= t('.password_length', count: @minimum_password_length) %>)</em>
+        <em><%= t('.password_length') %></em>
       <% end %>
-      <%= f.password_field :password, placeholder: t('.enter_new_password'), class: 'form-control' %>
+      <%= f.password_field :password, placeholder: t('.enter_new_password'), class: 'form-control password' %>
     </div>
 
-    <div class="field form-group mb-2">
+    <div class="field form-group mb-3">
       <%= f.label t('.confirm_new_password'), class: 'form-label' %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <%= f.password_field :password_confirmation, class: 'form-control password' %>
     </div>
+
+      <div class="field form-group mb-2">
+        <input type="checkbox" class="eye_icon">
+             <%= t('.show_password') %>
+      </div>
 
     <div class="field form-group mb-2">
       <%= f.submit t('.change_your_password'), class: 'btn btn-primary' %>
@@ -27,3 +32,13 @@
   <%= render "devise/shared/links" %>
   </div>
 </div>
+
+<script>
+  $(".eye_icon").on('click', function () {
+    if ($(".password").attr('type') === 'password') {
+      $(".password").attr('type', 'text');
+    } else {
+      $(".password").attr('type', 'password');
+    }
+  });
+</script>

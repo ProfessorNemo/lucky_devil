@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Oct  9 21:42:03 2022
+# Make data base, printed on Wed Oct 12 21:29:11 2022
 
 # Variables
 
@@ -23,9 +23,11 @@ SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
+GJS_DEBUG_OUTPUT = stderr
+# environment
 MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
 # environment
-VSCODE_CWD = /home/professor/Документы/rubytut/lesson59-64
+VSCODE_CWD = /home/professor
 # environment
 WINDOWPATH = 2
 # environment
@@ -50,8 +52,6 @@ PWD = /home/professor/Документы/rubytut/lesson59-64/lucky_devil
 %D = $(patsubst %/,%,$(dir $%))
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/home/professor/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
-# environment
-OLDPWD = /home/professor/Документы/rubytut/lesson59-64/lucky_devil
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
@@ -66,10 +66,10 @@ LANG = C
 XAUTHORITY = /run/user/1000/gdm/Xauthority
 # default
 .LOADED := 
+# environment
+RECAPTCHA_ASKANS_PRIVATE_KEY = 6LfdCA0iAAAAAApIwkn9k_f8dHsNnolaYe4gIZ6a
 # default
 .INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
-# environment
-GNOME_TERMINAL_SERVICE = :1.102
 # makefile
 MAKEFLAGS = pqrR
 # makefile
@@ -101,13 +101,15 @@ SNAP_REEXEC =
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 198486
+VSCODE_PID = 22273
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/professor-N56JRH:@/tmp/.ICE-unix/2927,unix/professor-N56JRH:/tmp/.ICE-unix/2927
+BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
+# environment
+SESSION_MANAGER = local/professor-N56JRH:@/tmp/.ICE-unix/2952,unix/professor-N56JRH:/tmp/.ICE-unix/2952
 # automatic
 *F = $(notdir $*)
 # environment
@@ -129,9 +131,9 @@ MAKECMDGOALS := all
 # environment
 XMODIFIERS = @im=ibus
 # environment
-SHLVL = 1
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/f97ade6b_55dc_40a3_8cde_b5bbaaed4d33
+SHLVL = 0
 # environment
 MAKELEVEL := 0
 # default
@@ -139,7 +141,7 @@ MAKE = $(MAKE_COMMAND)
 # environment
 SNAP_COOKIE = QOr97p3x2z0Nc5TiXecuBuVjxJ5OHFJP9XqQmvSyHo88ZKvrTd_W
 # environment
-PATH = /home/professor/.nvm/versions/node/v14.19.3/bin:/home/professor/.yarn/bin:/home/professor/.config/yarn/global/node_modules/.bin:/home/professor/.rbenv/shims:/home/professor/.rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/professor/Документы:/home/professor/.rbenv/shims:/home/professor/.rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/professor/Документы/rubytut/gits/meteoservice:/home/professor/.rbenv/shims:/home/professor/.rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/professor/Документы:/home/professor/.rbenv/shims:/home/professor/.rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+PATH = /home/professor/.nvm/versions/node/v14.19.3/bin:/home/professor/.yarn/bin:/home/professor/.config/yarn/global/node_modules/.bin:/home/professor/.rbenv/shims:/home/professor/.rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/professor/Документы:/home/professor/.rbenv/shims:/home/professor/.rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/professor/Документы/rubytut/gits/meteoservice:/home/professor/.rbenv/shims:/home/professor/.rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/professor/Документы:/home/professor/.rbenv/shims:/home/professor/.rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/professor/Загрузки/chromedriver
 # default
 MAKEFILES := 
 # automatic
@@ -151,6 +153,8 @@ SNAP = /snap/code/108
 # environment
 bbq = oceanborn
 # environment
+INVOCATION_ID = 9735801561fa43f29247dde0d73bec0d
+# environment
 SNAP_REVISION = 108
 # environment
 SNAP_REAL_HOME = /home/professor
@@ -158,6 +162,8 @@ SNAP_REAL_HOME = /home/professor
 USERNAME = professor
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
+# environment
+RECAPTCHA_ASKANS_PUBLIC_KEY = 6LfdCA0iAAAAAGXfJZR0PhrzYhEAgOo3avFLkYLB
 # automatic
 ?F = $(notdir $?)
 # environment
@@ -165,7 +171,7 @@ Hangman = oceanborn
 # environment
 XDG_CURRENT_DESKTOP = Unity
 # environment
-LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+LS_COLORS = 
 # automatic
 +F = $(notdir $+)
 # environment
@@ -177,11 +183,13 @@ GNUMAKEFLAGS :=
 # environment
 LOGNAME = professor
 # environment
+GIO_LAUNCHED_DESKTOP_FILE = /var/lib/snapd/desktop/applications/code_code.desktop
+# environment
 SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := drop!
 # environment
-SYSTEMD_EXEC_PID = 2954
+SYSTEMD_EXEC_PID = 3013
 # environment
 DISPLAY = :1
 # environment
@@ -197,15 +205,21 @@ SNAP_DATA = /var/snap/code/108
 # environment
 SNAP_CONTEXT = QOr97p3x2z0Nc5TiXecuBuVjxJ5OHFJP9XqQmvSyHo88ZKvrTd_W
 # environment
+MANAGERPID = 2433
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 22223
+# environment
+_ = /snap/code/108/usr/share/code/code
+# environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-COLORTERM = truecolor
-# environment
 GDK_PIXBUF_MODULE_FILE = /home/professor/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
 NVM_CD_FLAGS = 
+# environment
+JOURNAL_STREAM = 8:35427
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -218,8 +232,6 @@ QT_IM_MODULE = ibus
 ELECTRON_RUN_AS_NODE = 1
 # environment
 VSCODE_IPC_HOOK = /run/user/1000/vscode-3833debe-1.71.2-main.sock
-# environment
-TERM = xterm-256color
 # environment
 SNAP_NAME = code
 # environment
@@ -243,8 +255,6 @@ VSCODE_CLI = 1
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
-VTE_VERSION = 6800
-# environment
 SNAP_COMMON = /var/snap/code/common
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
@@ -259,7 +269,7 @@ GDMSESSION = ubuntu
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # variable set hash-table stats:
-# Load=124/1024=12%, Rehash=0, Collisions=11/156=7%
+# Load=129/1024=13%, Rehash=0, Collisions=5/161=3%
 
 # Pattern-specific Variable Values
 
@@ -274,11 +284,11 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 # Implicit Rules
 
 # No implicit rules.
- 
-make: *** No rule to make target 'all'.  Stop.
-
 
 # Files
+
+ 
+make: *** No rule to make target 'all'.  Stop.
 
 c: run-console
 #  Implicit rule search has not been done.
@@ -289,20 +299,20 @@ rubocop:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 38):
+#  recipe to execute (from 'Makefile', line 37):
 	rubocop -A
 
 webpacker:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 44):
+#  recipe to execute (from 'Makefile', line 43):
 	./bin/webpack-dev-server
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-10-09 21:38:35.161969117
+#  Last modified 2022-10-12 21:16:33.812999638
 #  File has been updated.
 #  Successfully updated.
 
@@ -310,15 +320,22 @@ rspec:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 50):
+#  recipe to execute (from 'Makefile', line 49):
+	bundle exec rspec spec/models/game_question_spec.rb
 	bundle exec rspec spec/models/game_spec.rb
+	bundle exec rspec spec/models/question_spec.rb
 	bundle exec rspec spec/controllers/games_controller_spec.rb
+	bundle exec rspec spec/views/users/index.html.erb_spec.rb
+	bundle exec rspec spec/views/users/show.html.erb_spec.rb
+	bundle exec rspec spec/views/users/_game.html.erb_spec.rb
+	bundle exec rspec spec/views/games/_help.html.erb_spec.rb
+	bundle exec rspec spec/views/games/_game_question.html.erb_spec.rb
 
 run-console:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 47):
+#  recipe to execute (from 'Makefile', line 46):
 	bundle exec rails console
 
 initially:
@@ -328,7 +345,6 @@ initially:
 #  recipe to execute (from 'Makefile', line 21):
 	rails db:create
 	rails db:migrate
-	rails db:seed
 
 # Not a target:
 .DEFAULT:
@@ -347,21 +363,21 @@ web:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 41):
+#  recipe to execute (from 'Makefile', line 40):
 	ruby bin/rails server -p 3000
 
 migration:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 26):
+#  recipe to execute (from 'Makefile', line 25):
 	bundle exec rails g migration $(RUN_ARGS)
 
 migrate:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 35):
+#  recipe to execute (from 'Makefile', line 34):
 	bundle exec rails db:migrate
 
 drop!:
@@ -375,7 +391,7 @@ model:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 29):
+#  recipe to execute (from 'Makefile', line 28):
 	bundle exec rails g model $(RUN_ARGS)
 
 db:
@@ -388,7 +404,7 @@ create:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 32):
+#  recipe to execute (from 'Makefile', line 31):
 	bundle exec rails db:create
 
 .PHONY: db
@@ -410,6 +426,6 @@ create:
 # strcache performance: lookups = 72 / hit rate = 26%
 # hash-table stats:
 # Load=53/8192=1%, Rehash=0, Collisions=0/72=0%
-# Finished Make data base on Sun Oct  9 21:42:03 2022
+# Finished Make data base on Wed Oct 12 21:29:11 2022
 
  

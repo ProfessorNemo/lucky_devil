@@ -20,7 +20,6 @@ drop!:
 initially:
 	rails db:create
 	rails db:migrate
-	rails db:seed
 
 migration:
 	bundle exec rails g migration $(RUN_ARGS)
@@ -47,8 +46,15 @@ run-console:
 	bundle exec rails console
 
 rspec:
+	bundle exec rspec spec/models/game_question_spec.rb
 	bundle exec rspec spec/models/game_spec.rb
+	bundle exec rspec spec/models/question_spec.rb
 	bundle exec rspec spec/controllers/games_controller_spec.rb
+	bundle exec rspec spec/views/users/index.html.erb_spec.rb
+	bundle exec rspec spec/views/users/show.html.erb_spec.rb
+	bundle exec rspec spec/views/users/_game.html.erb_spec.rb
+	bundle exec rspec spec/views/games/_help.html.erb_spec.rb
+	bundle exec rspec spec/views/games/_game_question.html.erb_spec.rb
 
 c: run-console
 

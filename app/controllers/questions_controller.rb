@@ -54,7 +54,7 @@ class QuestionsController < ApplicationController
   private
 
   def authorize_admin!
-    redirect_to root_path unless current_user.is_admin
+    redirect_to root_path, flash: { warning: t('controllers.questions.error') } unless current_user.is_admin
   end
 
   # Загрузка массива вопросов в базе

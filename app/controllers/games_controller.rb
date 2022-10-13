@@ -27,7 +27,7 @@ class GamesController < ApplicationController
     @game = Game.create_game_for_user!(current_user)
 
     # отправляемся на страницу игры
-    message_started = { notice: t('controllers.games.game_created', created_at: @game.created_at) }
+    message_started = { notice: t('controllers.games.game_created', created_at: l(@game.created_at, format: :long)) }
 
     redirect_to game_path(@game), message_started
   rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotSaved => e # если ошибка создания игры
@@ -54,9 +54,9 @@ class GamesController < ApplicationController
       )
     end
 
-    # Выбираем поведение в зависимости от формата запроса
+    # Выбираем поведение в зависимости от формата запроса к рельсам
     respond_to do |format|
-      # Если это html-запрос, по-старинке редиректим пользователя в зависимости от ситуации
+      # Если это html-запрос пришел, по-старинке редиректим пользователя в зависимости от ситуации
       format.html do
         if @answer_is_correct && !@game.finished?
           redirect_to game_path(@game)

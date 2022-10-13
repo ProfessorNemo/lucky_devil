@@ -93,7 +93,7 @@ RSpec.describe Game, type: :model do
       end
 
       it 'finishes game with money status' do
-        expect(game_w_questions.status).to eq(:money)
+        expect(game_w_questions.status).to eq(:fail)
       end
     end
   end

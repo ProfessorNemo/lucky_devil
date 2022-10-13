@@ -6,7 +6,7 @@ FactoryBot.define do
 
     # email должен быть уникален - при каждом вызове фабрики n будет увеличен поэтому все юзеры
     # будут иметь разные адреса: someguy_1@example.com, someguy_2@example.com, someguy_3@example.com ...
-    sequence(:email) { |n| "test_#{n}@test.com" }
+    sequence(:email) { |n| "stranger_#{n}@example.com" }
 
     # всегда создается с флажком false, ничего не генерим
     is_admin { false }
@@ -16,6 +16,6 @@ FactoryBot.define do
 
     # "u" - модель юзера, которую создает фабрика
     # коллбэк - после фазы :build записываем поля паролей, иначе Devise не позволит :create юзера
-    after(:build) { |u| u.password_confirmation = u.password = '123123' }
+    after(:build) { |u| u.password_confirmation = u.password = 'Stranger123456!?' }
   end
 end

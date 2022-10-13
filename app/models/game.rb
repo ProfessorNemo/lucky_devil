@@ -170,6 +170,8 @@ class Game < ApplicationRecord
       end
     elsif current_level > Question::QUESTION_LEVELS.max
       :won
+    elsif current_level == 0
+      :fail
     else
       :money
     end
