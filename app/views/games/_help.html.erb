@@ -1,11 +1,16 @@
 <div class="game-help-info">
 <%# help (по назв. паршелла) - это хэш, переданный из контроллера, который help_hash %>
-  <% if help.key?(:friend_call) || help.key?(:audience_help) %>
+  <% if help.key?(:friend_call) || help.key?(:audience_help) || help.key?(:replacement_question)%>
     <div class="row buffer-top-lg">
       <div class="col-xs-12">
         <% if help.key?(:friend_call) %>
           <div class="alert alert-info text-center">
             <%= help[:friend_call] %>
+          </div>
+        <% end %>
+        <% if help.key?(:replacement_question) %>
+          <div class="alert alert-info text-center">
+            <%= help[:replacement_question] %>
           </div>
         <% end %>
 
@@ -37,6 +42,11 @@
   <div class="col-md-auto">
     <% unless game.audience_help_used? %>
       <%= link_to fa_icon('users'), help_game_path(game, help_type: :audience_help), method: :put, class: 'btn btn-default btn-help' %>
+    <% end %>
+  </div>
+  <div class="col-md-auto">
+    <% unless game.replacement_question_used? %>
+      <%= link_to fa_icon('refresh'), help_game_path(game, help_type: :replacement_question), method: :put, class: 'btn btn-default btn-help' %>
     <% end %>
   </div>
 </div>

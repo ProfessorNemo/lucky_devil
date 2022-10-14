@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2022_10_07_211940) do
     t.boolean "fifty_fifty_used", default: false, null: false
     t.boolean "audience_help_used", default: false, null: false
     t.boolean "friend_call_used", default: false, null: false
+    t.boolean "replacement_question_used", default: false, null: false
     t.index ["user_id"], name: "index_games_on_user_id"
   end
 

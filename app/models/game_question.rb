@@ -29,6 +29,7 @@ class GameQuestion < ApplicationRecord
   #   fifty_fifty: ['a', 'b'], # При использовании подсказски остались варианты a и b
   #   audience_help: {'a' => 42, 'c' => 37 ...}, # Распределение голосов по вариантам a, b, c, d
   #   friend_call: 'Василий Петрович считает, что правильный ответ A'
+  #   replacement_question: Произведена замена вопроса
   # }
   #
 
@@ -83,6 +84,12 @@ class GameQuestion < ApplicationRecord
     # массив ключей
     keys_to_use = keys_to_use_in_help
     help_hash[:friend_call] = GameHelpGenerator.friend_call(keys_to_use, correct_answer_key)
+    save
+  end
+
+  # Добавляем в help_hash подсказку "замена вопроса"
+  def add_replacement_question
+    help_hash[:replacement_question] = I18n.t('game_help.replacement_question')
     save
   end
 

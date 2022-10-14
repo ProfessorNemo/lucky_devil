@@ -55,13 +55,12 @@ class Game < ApplicationRecord
 
   # последний отвеченный вопрос игры, *nil* для новой игры!
   def previous_game_question
-    # с помощью ruby метода detect находим в массиве game_questions нужный вопрос
-    game_questions.detect { |q| q.question.level == previous_level }
+    current_update_need(previous_level)
   end
 
   # текущий, еще неотвеченный вопрос игры
   def current_game_question
-    game_questions.detect { |q| q.question.level == current_level }
+    current_update_need(current_level)
   end
 
   # -1 для новой игры!
@@ -124,7 +123,7 @@ class Game < ApplicationRecord
   # false если подсказка уже заюзана.
   #
   # rubocop:disable all
-  # help_type = :fifty_fifty | :audience_help | :friend_call
+  # help_type = :fifty_fifty | :audience_help | :friend_call | :replacement_question
   def use_help(help_type)
     case help_type
     when :fifty_fifty
@@ -146,6 +145,12 @@ class Game < ApplicationRecord
       unless friend_call_used
         toggle!(:friend_call_used)
         current_game_question.add_friend_call
+        return true
+      end
+    when :replacement_question
+      unless replacement_question_used
+        toggle!(:replacement_question_used)
+        current_game_question.add_replacement_question
         return true
       end
     end
@@ -200,5 +205,16 @@ class Game < ApplicationRecord
   def fire_proof_prize(answered_level)
     lvl = FIREPROOF_LEVELS.reverse.find { |x| x <= answered_level }
     lvl.present? ? PRIZES[lvl] : 0
+  end
+
+  def current_update_need(level)
+    # с помощью ruby метода detect находим в массиве game_questions нужный вопрос
+    current = game_questions.detect { |q| q.question.level == level }
+    if replacement_question_used.blank?
+      current
+    else
+      current.update question: Question.where(level: level).order('RANDOM()').first
+      current.reload
+    end
   end
 end

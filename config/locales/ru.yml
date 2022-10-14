@@ -76,6 +76,7 @@ ru:
       - "Александр Друзь"
       - "Серый"
     friend_call: "%{name} считает, что это вариант %{variant}"
+    replacement_question: Произведена замена вопроса
 
   game_statuses:
     fail: 'проигрыш'

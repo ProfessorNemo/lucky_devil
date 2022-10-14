@@ -76,6 +76,7 @@ en:
       - "Александр Друзь"
       - "Серый"
     friend_call: "%{name} thinks this is a variant of %{variant}"
+    replacement_question: Question has been replaced
 
   game_statuses:
     fail: 'fail'
