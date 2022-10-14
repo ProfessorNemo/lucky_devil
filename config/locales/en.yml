@@ -1,33 +1,129 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              password_error: complexity requirement not met. Length should be 8-70 characters and include - 1 uppercase, 1 lowercase, 1 digit and 1 special character.
+        subscription:
+          attributes:
+            user_email:
+              already_exists: already registered
+
+  controllers:
+    games:
+      bad_answer: "Correct answer: %{answer}. Game over, your prize is %{prize}"
+      error_creating_game: 'Error creating game for user %{user}, msg = %{msg}. %{backtrace}'
+      game_created: "Game started at %{created_at}, time out"
+      game_not_created: "Unable to create game :( Please contact admin"
+      game_not_finished: "You haven't finished the game yet"
+      game_finished: "Game over, your winnings are %{prize}. Come back!"
+      game_closed: "Game %{game_id} is over and no longer available, please start a new one!"
+      good_answer: "Correct answer, well done :)"
+      help_used: "You used a hint"
+      help_not_used: "Hint has already been used!"
+      not_your_game: "This is not your game!"
+    questions:
+      bad_file_data: 'Bad file_data: %{class}, %{info}'
+      create_info: 'Level %{level}, processed %{size}, created %{created}, time %{time}'
+      error: "You can't come here"
+
+  devise:
+    registrations:
+      edit:
+        back: back
+        cancel_my_account: 'Delete account:'
+        confirm_new_password: Confirm new password
+        delete: Delete
+        edit: Editing
+        name: Name
+        new_password: New password
+        password_length: Length should be 8-70 characters and include - 1 uppercase, 1 lowercase, 1 digit and 1 special character.
+        show_password: Show password
+      new:
+        name: Name
+        password_length: Length should be 8-70 characters and include - 1 uppercase, 1 lowercase, 1 digit and 1 special character.
+        password: Password
+        password_confirm: Confirm password
+        your_name: Your name
+        show_password: Show password
+      sessions:
+        new:
+          Email: Email
+          password: Password
+          show_password: Show password
+          password_length: Length should be 8-70 characters and include - 1 uppercase, 1 lowercase, 1 digit and 1 special character.
+      passwords:
+        edit:
+          enter_new_password: Enter a new password
+          password_length: Length should be 8-70 characters and include - 1 uppercase, 1 lowercase, 1 digit and 1 special character.
+          show_password: Show password
+
+  en: English
+
+  games:
+    help:
+      spectators_guess: 'Viewers believe:'
+
+  game_help:
+    friends:
+      - "Шура Каретный"
+      - "Борис Бурда"
+      - "Анатолий Вассерман"
+      - "Федор Двинятин"
+      - "Баба Таня"
+      - "Александр Друзь"
+      - "Серый"
+    friend_call: "%{name} thinks this is a variant of %{variant}"
+    replacement_question: Question has been replaced
+
+  game_statuses:
+    fail: 'fail'
+    in_progress: 'in progress'
+    money: 'money'
+    timeout: 'time'
+    won: 'win'
+
+  layouts:
+    application:
+      admin: Admin
+      add_new_questions: Add new questions
+      goodprogrammer: Good programmer
+      log_in: Login
+      log_out: Log out
+      new_game: New game
+      sign_up: Register
+      title: Millionaire
+
+  number:
+    currency:
+      format:
+        precision: 0
+        unit: "₽"
+
+  questions:
+    new:
+      info_1: 'Each non-empty line of the file should look like this:'
+      info_2: Question text?|Correct answer|Answer 2|Answer 3|Answer 4
+      enter_question_level: Specify the level of the question pack and attach a file of the required format
+      file_with_questions: File with questions
+      load: Load
+      level: 'Level is %{count}'
+
+  ru: Russian
+
+  users:
+    index:
+      for_game: Per game
+      games: Games
+      name: Name
+      place: Place
+      prize: Win
+      rating: Rating
+    show:
+      change_name_password: Change name and password
+      date: Date
+      hints: Hints
+      prize: Win
+      question: Question

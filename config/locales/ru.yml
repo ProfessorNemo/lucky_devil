@@ -1,4 +1,16 @@
 ru:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              password_error: недостаточно сложный. Длина должна быть от 8 до 70 символов и включать 1 прописную, 1 строчную, 1 цифру и 1 специальный символ.
+        subscription:
+          attributes:
+            user_email:
+              already_exists: уже зарегистрирован
+
   controllers:
     games:
       bad_answer: "Правильный ответ: %{answer}. Игра закончена, ваш приз %{prize}"
@@ -15,6 +27,7 @@ ru:
     questions:
       bad_file_data: 'Bad file_data: %{class}, %{info}'
       create_info: 'Уровень %{level}, обработано %{size}, создано %{created}, время %{time}'
+      error: 'Вам сюда нельзя'
 
   devise:
     registrations:
@@ -26,21 +39,28 @@ ru:
         edit: Редактирование
         name: Имя
         new_password: Новый пароль
-        password_length: 'не менее %{count} символов'
+        password_length: Длина должна быть от 8 до 70 символов и включать 1 прописную, 1 строчную, 1 цифру и 1 специальный символ.
+        show_password: Показать пароль
       new:
         name: Имя
-        password_length: 'не менее %{count} символов'
+        password_length: Длина должна быть от 8 до 70 символов и включать 1 прописную, 1 строчную, 1 цифру и 1 специальный символ.
         password: Пароль
         password_confirm: Подтвердите пароль
         your_name: Ваше имя
+        show_password: Показать пароль
     sessions:
       new:
         email: Email
         password: Пароль
+        show_password: Показать пароль
+        password_length: Длина должна быть от 8 до 70 символов и включать 1 прописную, 1 строчную, 1 цифру и 1 специальный символ.
     passwords:
       edit:
         enter_new_password: Введите новый пароль
-        password_length: 'не менее %{count} символов'
+        password_length: Длина должна быть от 8 до 70 символов и включать 1 прописную, 1 строчную, 1 цифру и 1 специальный символ.
+        show_password: Показать пароль
+
+  en: Английский
 
   games:
     help:
@@ -48,14 +68,15 @@ ru:
 
   game_help:
     friends:
-      - "Жора"
+      - "Шура Каретный"
       - "Борис Бурда"
       - "Анатолий Вассерман"
       - "Федор Двинятин"
       - "Баба Таня"
       - "Александр Друзь"
-      - "Сережа"
+      - "Серый"
     friend_call: "%{name} считает, что это вариант %{variant}"
+    replacement_question: Произведена замена вопроса
 
   game_statuses:
     fail: 'проигрыш'
@@ -68,8 +89,7 @@ ru:
     application:
       admin: Админка
       add_new_questions: Залить новые вопросы
-      goodprogrammer: Хороший программист 2022
-      link: 'https://github.com/ProfessorNemo'
+      goodprogrammer: Хороший программист
       log_in: Войти
       log_out: Выйти
       new_game: Новая игра
@@ -90,6 +110,8 @@ ru:
       file_with_questions: Файл с вопросами
       load: Залить
       level: 'Уровень — %{count}'
+
+  ru: Русский
 
   users:
     index:

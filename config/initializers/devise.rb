@@ -14,7 +14,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'admin@gmail.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -64,7 +64,10 @@ Devise.setup do |config|
   # Tell if authentication through HTTP Auth is enabled. False by default.
   # It can be set to an array that will enable http authentication only for the
   # given strategies, for example, `config.http_authenticatable = [:database]` will
-  # enable it only for database authentication. The supported strategies are:
+  # enable it only for database authentication.
+  # For API-only applications to support authentication "out-of-the-box", you will likely want to
+  # enable this with :database unless you are using a custom strategy.
+  # The supported strategies are:
   # :database      = Support basic authentication with authentication key + password
   # config.http_authenticatable = false
 
@@ -92,29 +95,44 @@ Devise.setup do |config|
   # from the server. You can disable this option at your own risk.
   # config.clean_up_csrf_token_on_authentication = true
 
+  # When false, Devise will not attempt to reload routes on eager load.
+  # This can reduce the time taken to boot the app but if your application
+  # requires the Devise mappings to be loaded during boot time the application
+  # won't boot properly.
+  # config.reload_routes = true
+
   # ==> Configuration for :database_authenticatable
-  # For bcrypt, this is the cost for hashing the password and defaults to 11. If
+  # For bcrypt, this is the cost for hashing the password and defaults to 12. If
   # using other algorithms, it sets how many times you want the password to be hashed.
+  # The number of stretches used for generating the hashed password are stored
+  # with the hashed password. This allows you to change the stretches without
+  # invalidating existing passwords.
   #
   # Limiting the stretches to just one in testing will increase the performance of
   # your test suite dramatically. However, it is STRONGLY RECOMMENDED to not use
   # a value less than 10 in other environments. Note that, for bcrypt (the default
   # algorithm), the cost increases exponentially with the number of stretches (e.g.
   # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
-  config.stretches = Rails.env.test? ? 1 : 11
+  config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '0bd879791bd383b466f4bb72512e5a68eba427d4e467aefcc498e55f90f630de1d60abba4cd539faf952adbf9f14ca669158f8f68d2b5585fd7de1e9a3d52f6b'
+  # config.pepper = 'b5283140ce1bdc6136083314a699a77ea28e8b74b6998241c692f3ca8ee1bb84a6e7917dbfe28cc4e5bb8b7640897e02885b2d3b2915c3fa7803420d0763999d'
 
-  # Send a notification email when the user's password is changed
+  # Send a notification to the original email when the user's email is changed.
+  # config.send_email_changed_notification = false
+
+  # Send a notification email when the user's password is changed.
   # config.send_password_change_notification = false
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
   # confirming their account. For instance, if set to 2.days, the user will be
   # able to access the website for two days without confirming their account,
-  # access will be blocked just in the third day. Default is 0.days, meaning
-  # the user cannot access the website without confirming their account.
+  # access will be blocked just in the third day.
+  # You can also set it to nil, which will allow the user to access the website
+  # without confirming their account.
+  # Default is 0.days, meaning the user cannot access the website without
+  # confirming their account.
   # config.allow_unconfirmed_access_for = 2.days
 
   # A period that the user is allowed to confirm their account before their
@@ -150,7 +168,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  config.password_length = 6..128
+  config.password_length = 8..70
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
@@ -267,4 +285,17 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
+  # ==> Turbolinks configuration
+  # If your app is using Turbolinks, Turbolinks::Controller needs to be included to make redirection work correctly:
+  #
+  # ActiveSupport.on_load(:devise_failure_app) do
+  #   include Turbolinks::Controller
+  # end
+
+  # ==> Configuration for :registerable
+
+  # When set to false, does not sign a user in automatically after their password is
+  # changed. Defaults to true, so a user is signed in automatically after changing a password.
+  # config.sign_in_after_change_password = true
 end

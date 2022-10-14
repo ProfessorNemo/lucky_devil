@@ -5,12 +5,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.3'
 
-gem 'jbuilder', '~> 2.7'
+gem 'font-awesome-rails'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
+gem 'sassc-rails'
 gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
+gem 'twitter-bootstrap-rails'
 gem 'webpacker', '~> 5.0'
 
 # Use Redis adapter to run Action Cable in production
@@ -20,20 +22,16 @@ gem 'webpacker', '~> 5.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-# Удобная админка для управления любыми сущностями
+gem 'devise', '~> 4.8'
+
+gem 'devise-i18n'
+# админка для управления любыми сущностями
 gem 'rails_admin'
 gem 'rails_admin-i18n'
-gem 'rails-i18n', '~> 6.0.0'
+gem 'rails-i18n'
 
-gem 'devise', '~> 4.8'
-gem 'devise-i18n'
-
-gem 'font-awesome-rails'
 gem 'foreman', '~> 0.87.2'
-gem 'jquery-rails'
 gem 'letter_opener'
-gem 'russian'
-gem 'twitter-bootstrap-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -66,4 +64,6 @@ end
 group :test do
   gem 'database_cleaner-active_record'
 end
-gem 'sassc-rails'
+
+# для проверки корректности введенного email
+gem 'valid_email2', '~> 4.0'

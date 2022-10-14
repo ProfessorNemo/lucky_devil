@@ -16,16 +16,21 @@
       </div>
 
       <div class="field form-group mb-2">
-        <%= f.label :password %>
+        <%= f.label :password %><br />
         <% if @minimum_password_length %>
-        <em>(<%= t('.password_length', count: @minimum_password_length) %>)</em>
+        <em><%= t('.password_length') %></em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password", placeholder: t('.password'), class: 'form-control' %>
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: t('.password'), class: 'form-control password' %>
       </div>
 
       <div class="field form-group mb-2">
         <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: t('.password_confirm'), class: 'form-control' %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: t('.password_confirm'), class: 'form-control password' %>
+      </div>
+
+      <div class="field form-group mb-2">
+        <input type="checkbox" class="eye_icon">
+             <%= t('.show_password') %>
       </div>
 
       <div class="actions mt-4 d-grid gap-2">
@@ -36,3 +41,13 @@
     <%= render "devise/shared/links" %>
   </div>
 </div>
+
+<script>
+  $(".eye_icon").on('click', function () {
+    if ($(".password").attr('type') === 'password') {
+      $(".password").attr('type', 'text');
+    } else {
+      $(".password").attr('type', 'password');
+    }
+  });
+</script>

@@ -10,6 +10,9 @@ AllCops:
 Style/Documentation:
   Enabled: false
 
+Metrics/ClassLength:
+  Enabled: false
+
 Metrics/BlockLength:
   Enabled: false
 
@@ -50,6 +53,15 @@ RSpec/ExpectActual:
   Enabled: false
 
 RSpec/ContextWording:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/LetSetup:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
   Enabled: false
 
 Rails/HttpPositionalArguments:

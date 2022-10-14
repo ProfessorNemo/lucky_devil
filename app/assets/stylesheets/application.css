@@ -15,8 +15,10 @@
  *= require bootstrap_and_overrides
  *= require font-awesome
  *= require games
+ *= require errors
  *= require users
  *= require badge
+ *= require show-password-toggle.min
  *= require_self
  */
 
@@ -87,12 +89,11 @@ h3 {
     color: #ffff00;
 }
 
-.bg-success {
-    /* background-color: #f0d8d8; */
-    background: none;
-}
-
-.bg-danger {
-    /* background-color: #f0d8d8; */
-    background: none;
+input {
+    color: rgb(240, 8, 8);
+    font: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    margin: 0;
 }

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Модельи игры — создается когда пользователь начинает новую игру
+# Модель игры — создается когда пользователь начинает новую игру
 # Хранит/обновляет состояние игры и отвечает за игровой процесс.
 class Game < ApplicationRecord
   # денежный приз за каждый вопрос
@@ -55,13 +55,12 @@ class Game < ApplicationRecord
 
   # последний отвеченный вопрос игры, *nil* для новой игры!
   def previous_game_question
-    # с помощью ruby метода detect находим в массиве game_questions нужный вопрос
-    game_questions.detect { |q| q.question.level == previous_level }
+    current_update_need(previous_level)
   end
 
   # текущий, еще неотвеченный вопрос игры
   def current_game_question
-    game_questions.detect { |q| q.question.level == current_level }
+    current_update_need(current_level)
   end
 
   # -1 для новой игры!
@@ -123,12 +122,15 @@ class Game < ApplicationRecord
   # Возвращает true, если подсказка применилась успешно,
   # false если подсказка уже заюзана.
   #
-  # help_type = :fifty_fifty | :audience_help | :friend_call
+  # rubocop:disable all
+  # help_type = :fifty_fifty | :audience_help | :friend_call | :replacement_question
   def use_help(help_type)
     case help_type
     when :fifty_fifty
+      # если этот фложок в БД 'false', то переключаем его с пом-ю м-да toggle! в 'true'
+      # ('!') - сразу сохраняем в базе
       unless fifty_fifty_used
-        # ActiveRecord метод toggle! переключает булевое поле сразу в базе
+        # ActiveRecord метод "toggle!"" переключает булевое поле сразу в базе
         toggle!(:fifty_fifty_used)
         current_game_question.add_fifty_fifty
         return true
@@ -143,6 +145,12 @@ class Game < ApplicationRecord
       unless friend_call_used
         toggle!(:friend_call_used)
         current_game_question.add_friend_call
+        return true
+      end
+    when :replacement_question
+      unless replacement_question_used
+        toggle!(:replacement_question_used)
+        current_game_question.add_replacement_question
         return true
       end
     end
@@ -167,6 +175,8 @@ class Game < ApplicationRecord
       end
     elsif current_level > Question::QUESTION_LEVELS.max
       :won
+    elsif current_level == 0
+      :fail
     else
       :money
     end
@@ -188,11 +198,23 @@ class Game < ApplicationRecord
       user.save!
     end
   end
+  # rubocop:enable all
 
   # По заданному уровню вопроса вычисляем вознаграждение за ближайшую несгораемую сумму
   # noinspection RubyArgCount
   def fire_proof_prize(answered_level)
     lvl = FIREPROOF_LEVELS.reverse.find { |x| x <= answered_level }
     lvl.present? ? PRIZES[lvl] : 0
+  end
+
+  def current_update_need(level)
+    # с помощью ruby метода detect находим в массиве game_questions нужный вопрос
+    current = game_questions.detect { |q| q.question.level == level }
+    if replacement_question_used.blank?
+      current
+    else
+      current.update question: Question.where(level: level).order('RANDOM()').first
+      current.reload
+    end
   end
 end
