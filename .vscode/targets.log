@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Oct 14 20:10:43 2022
+# Make data base, printed on Fri Oct 14 23:49:58 2022
 
 # Variables
 
@@ -25,7 +25,7 @@ SNAP_INSTANCE_KEY =
 # environment
 MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
 # environment
-VSCODE_CWD = /home/professor/Документы/rubytut/lesson59-64
+VSCODE_CWD = /home/professor/Документы/rubytut/gits
 # environment
 WINDOWPATH = 2
 # environment
@@ -45,13 +45,13 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
 # environment
-PWD = /home/professor/Документы/rubytut/lesson59-64/lucky_devil
+PWD = /home/professor/Документы/rubytut/gits/lucky_devil
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/home/professor/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
-OLDPWD = /home/professor/Документы/rubytut
+OLDPWD = /home/professor/Документы/rubytut/gits/lucky_devil
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
@@ -73,7 +73,7 @@ GNOME_TERMINAL_SERVICE = :1.577
 # makefile
 MAKEFLAGS = pqrR
 # makefile
-CURDIR := /home/professor/Документы/rubytut/lesson59-64/lucky_devil
+CURDIR := /home/professor/Документы/rubytut/gits/lucky_devil
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
@@ -101,7 +101,7 @@ SNAP_REEXEC =
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 22176
+VSCODE_PID = 62206
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -267,9 +267,9 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # Directories
 
-# . (device 2049, inode 1311585): 38 files, no impossibilities.
+# . (device 2049, inode 1311585): 35 files, no impossibilities.
 
-# 38 files, no impossibilities in 1 directories.
+# 35 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -292,17 +292,17 @@ rubocop:
 webpacker:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 43):
  
 make: *** No rule to make target 'all'.  Stop.
 
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 43):
 	./bin/webpack-dev-server
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-10-14 01:48:48.269744969
+#  Last modified 2022-10-14 23:47:48.323739547
 #  File has been updated.
 #  Successfully updated.
 
@@ -412,12 +412,12 @@ create:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 56 / storage = 509 B / avg = 9 B
-# current buf: size = 8162 B / used = 509 B / count = 56 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 53 / storage = 471 B / avg = 8 B
+# current buf: size = 8162 B / used = 471 B / count = 53 / avg = 8 B
 
-# strcache performance: lookups = 75 / hit rate = 25%
+# strcache performance: lookups = 72 / hit rate = 26%
 # hash-table stats:
-# Load=56/8192=1%, Rehash=0, Collisions=0/75=0%
-# Finished Make data base on Fri Oct 14 20:10:43 2022
+# Load=53/8192=1%, Rehash=0, Collisions=0/72=0%
+# Finished Make data base on Fri Oct 14 23:49:58 2022
 
  
