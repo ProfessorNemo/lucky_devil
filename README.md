@@ -1,6 +1,6 @@
 # Lucky devil (Who Wants to Be a Millionare?)
 
-###### Ruby: `3.0.3` Rails: `6.1.6` Language: `Russian`
+###### Ruby: `3.0.3` Rails: `6.1.6` Yarn: `1.22.19` Nodejs: `12.22.9` Language `Russian`
 В рамках курса [goodprogrammer.ru](https://goodprogrammer.ru/).
 ###### Скриншоты приложения находятся в корневой директории "screenshots"
 
@@ -55,7 +55,12 @@ $ make initially
 $ rails db:seed
 ```
 
-5. Запустите сервер
+5. Установите и обновите все зависимости в файле `package.json`.
+```
+$ yarn install && yarn upgrade
+```
+
+6. Запустите сервер
 ```
 $ bin/dev
 ```
