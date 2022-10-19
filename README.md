@@ -1,6 +1,6 @@
 # Lucky devil (Who Wants to Be a Millionare?)
 
-###### Ruby: `3.0.3` Rails: `6.1.6` Yarn: `1.22.19` Nodejs: `12.22.9` Language `Russian`
+###### Ruby: `3.0.3` Rails: `6.1.6` Yarn: `1.22.19` Nodejs: `12.22.9` Language: `Russian`
 В рамках курса [goodprogrammer.ru](https://goodprogrammer.ru/).
 ###### Скриншоты приложения находятся в корневой директории "screenshots"
 
