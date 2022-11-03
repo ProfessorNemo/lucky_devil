@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe 'users/show', type: :view do
+RSpec.describe 'users/show' do
   context 'when the user views their own page' do
     before do
       user = assign(:user, build_stubbed(:user, name: 'User111'))

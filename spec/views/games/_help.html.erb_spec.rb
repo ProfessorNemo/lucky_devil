@@ -2,7 +2,7 @@
 
 # Тест на фрагмент games/_help.html.erb
 
-RSpec.describe 'games/help', type: :view do
+RSpec.describe 'games/help' do
   # Перед началом теста подготовим объекты
   # build_stubbed не создает объекта в базе
   let(:game) { build_stubbed(:game) }

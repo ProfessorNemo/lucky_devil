@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe 'USER looks another user page', type: :feature do
+RSpec.describe 'USER looks another user page' do
   let(:user1) { create(:user, name: 'User_1') }
   let(:user2) { create(:user, name: 'User_2') }
 

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-RSpec.describe 'USER creates a game', type: :feature do
+RSpec.describe 'USER creates a game' do
   # Чтобы пользователь мог начать игру, нам надо
   # создать пользователя
-  let(:user) { create :user }
+  let(:user) { create(:user) }
 
   # и создать 15 вопросов с разными уровнями сложности
   # Обратите внимание, что текст вопроса и вариантов ответа нам

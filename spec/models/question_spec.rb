@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Question, type: :model do
+RSpec.describe Question do
   context 'validations check' do
     subject(:question) do
       described_class.new(

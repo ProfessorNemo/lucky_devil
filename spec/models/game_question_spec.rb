@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe GameQuestion, type: :model do
+RSpec.describe GameQuestion do
   let(:game_question) do
     create(:game_question, a: 2, b: 1, c: 4, d: 3)
   end

@@ -6,7 +6,7 @@
 #   2. на четкое выполнение самых важных сценариев (требований) приложения
 #   3. на передачу граничных/неправильных данных в попытке сломать контроллер
 
-RSpec.describe GamesController, type: :controller do
+RSpec.describe GamesController do
   # обычный пользователь
   let(:user) { create(:user) }
   # админ

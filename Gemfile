@@ -5,33 +5,26 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.3'
 
-gem 'font-awesome-rails'
+gem 'cssbundling-rails', '~> 1.0'
+gem 'devise', '~> 4.8'
+gem 'font-awesome-rails', '~> 4.7'
+gem 'jsbundling-rails', '~> 1.0'
 gem 'pg', '~> 1.1'
-gem 'puma', '~> 5.0'
+gem 'puma', '~> 6.0'
 gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
 gem 'sassc-rails'
 gem 'sass-rails', '>= 6'
+gem 'sprockets-rails', '~> 3.4'
 gem 'turbolinks', '~> 5'
 gem 'twitter-bootstrap-rails'
-gem 'webpacker', '~> 5.0'
-
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
-
-gem 'devise', '~> 4.8'
 
 gem 'devise-i18n'
 # админка для управления любыми сущностями
+gem 'letter_opener'
 gem 'rails_admin'
 gem 'rails_admin-i18n'
 gem 'rails-i18n'
-
-gem 'foreman', '~> 0.87.2'
-gem 'letter_opener'
+gem 'valid_email2', '~> 4.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -55,7 +48,6 @@ group :development do
   gem 'rubocop-performance', '~> 1.14', require: false
   gem 'rubocop-rails', '~> 2.14', require: false
   gem 'rubocop-rspec', require: false
-  gem 'spring'
   gem 'web-console', '>= 4.1.0'
 end
 
@@ -64,6 +56,3 @@ end
 group :test do
   gem 'database_cleaner-active_record'
 end
-
-# для проверки корректности введенного email
-gem 'valid_email2', '~> 4.0'

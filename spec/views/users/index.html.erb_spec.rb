@@ -2,7 +2,7 @@
 
 # Тест на шаблон users/index.html.erb
 
-RSpec.describe 'users/index', type: :view do
+RSpec.describe 'users/index' do
   # Перед каждым шагом мы пропишем в переменную @users пару пользователей
   # как бы имитируя действие контроллера, который эти данные будет брать из базы
   # Обратите внимание, что мы объекты в базу не кладем, т.к. пишем FactoryBot.build_stubbed

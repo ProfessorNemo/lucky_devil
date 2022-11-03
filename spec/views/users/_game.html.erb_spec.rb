@@ -3,7 +3,7 @@
 # Тест на фрагмент users/_game.html.erb, который выводит
 # информацию о конкретной игре на странице профиля
 
-RSpec.describe 'users/_game', type: :view do
+RSpec.describe 'users/_game' do
   # Подготовим объект game для использования в тестах, где он понадобится
   # обратите внимание, что build_stubbed не создает объект в базе (id вручную создаем)
   let(:game) do
