@@ -59,7 +59,7 @@ $ rails db:seed
 
 5. Установите и обновите все зависимости в файле `package.json`.
 ```
-$ yarn install && yarn upgrade
+$ yarn install
 ```
 
 6. Запустите сервер
