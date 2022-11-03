@@ -260,8 +260,6 @@ GEM
     rubocop-rspec (2.14.2)
       rubocop (~> 1.33)
     ruby-progressbar (1.11.0)
-    sass-rails (6.0.0)
-      sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -343,7 +341,6 @@ DEPENDENCIES
   rubocop-performance (~> 1.14)
   rubocop-rails (~> 2.14)
   rubocop-rspec
-  sass-rails (>= 6)
   sassc-rails
   shoulda-matchers
   sprockets-rails (~> 3.4)
