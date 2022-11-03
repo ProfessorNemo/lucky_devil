@@ -1,6 +1,6 @@
-# Lucky devil (Who Wants to Be a Millionare?)
+# Lucky devil ("Who Wants to Be a Millionare?")
 
-###### Ruby: `3.0.3` Rails: `6.1.6` Yarn: `1.22.19` Nodejs: `12.22.9` Language: `Russian`
+###### Ruby: `3.0.3` Rails: `6.1.6` Yarn: `3.2.4` Node: `17.1.0` Nodejs: `12.22.9` Language: `Russian`
 В рамках курса [goodprogrammer.ru](https://goodprogrammer.ru/).
 ###### Скриншоты приложения находятся в корневой директории "screenshots"
 
@@ -30,6 +30,8 @@
 Приложение покрыто тестами с использованием: `RSpec` `Capybara` `factory-bot`
 
 Пользователи со статусом `admin` могут загружать вопросы (использовано решение [`rails_admin`](https://github.com/railsadminteam/rails_admin))
+
+Выполнена миграция с `Webpacker` на `ESBuild`
 
 
 
