@@ -3,6 +3,7 @@
 ###### Ruby: `3.0.3` Rails: `6.1.6` Yarn: `3.2.4` Node: `17.1.0` Nodejs: `12.22.9` Language: `Russian`
 В рамках курса [goodprogrammer.ru](https://goodprogrammer.ru/).
 ###### Скриншоты приложения находятся в корневой директории "screenshots"
+![Снимок экрана от 2022-10-14 23-26-48](https://user-images.githubusercontent.com/102049907/200093621-7d3acb63-bf8c-491c-8212-ebda8afa4567.png)
 
 ### Описание:
 
