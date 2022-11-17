@@ -47,7 +47,7 @@ $ git clone git@github.com:phobco/millionaire-game.git
 $ bundle
 ```
 
-3. Создайте базу данных и запустите миграцию (используется база данных PostgreSQL).
+3. Создайте базу данных, запустите миграции, а также установите все зависимости в файле `package.json`.
 ```
 $ make initially
 ```
@@ -58,12 +58,7 @@ $ make initially
 $ rails db:seed
 ```
 
-5. Установите и обновите все зависимости в файле `package.json`.
-```
-$ yarn install
-```
-
-6. Запустите сервер
+5. Запустите сервер
 ```
 $ bin/dev
 ```
