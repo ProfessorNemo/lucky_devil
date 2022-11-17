@@ -47,7 +47,7 @@ $ git clone git@github.com:phobco/millionaire-game.git
 $ bundle
 ```
 
-3. Создайте базу данных, запустите миграции, а также установите все зависимости в файле `package.json`.
+3. Создайте базу данных, запустите миграции, а также установите все зависимости в файле `package.json`
 ```
 $ make initially
 ```
