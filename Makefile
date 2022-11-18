@@ -20,11 +20,7 @@ drop!:
 initially:
 	rails db:create
 	rails db:migrate
-	rails db:seed
 	yarn install
-	yarn build:css
-	yarn build
-	rails assets:precompile
 
 migration:
 	bundle exec rails g migration $(RUN_ARGS)
