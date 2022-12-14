@@ -2,7 +2,8 @@
 
 ###### Ruby: `3.0.3` Rails: `6.1.6` Yarn: `3.2.4` Node: `17.1.0` Nodejs: `12.22.9` Language: `Russian`
 ###### Скриншоты приложения находятся в корневой директории "screenshots"
-![Снимок экрана от 2022-10-14 23-26-48](https://user-images.githubusercontent.com/102049907/200093621-7d3acb63-bf8c-491c-8212-ebda8afa4567.png)
+![Снимок экрана от 2022-12-14 19-37-53](https://user-images.githubusercontent.com/102049907/207656293-c4c53e8b-a22c-4c9d-8bf7-17a7e9081b29.png)
+
 
 ### Описание:
 
